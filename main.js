@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Processing
     processBtn.addEventListener('click', async () => {
         processBtn.disabled = true;
-        processBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 처리 중...';
+        processBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> 처리 중...';
         
         const results = [];
         
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showResults(results);
         
         processBtn.disabled = false;
-        processBtn.innerHTML = '이미지 처리하기 <i class="fas fa-arrow-right"></i>';
+        processBtn.innerHTML = '작업 시작하기 <i class="fas fa-bolt"></i>';
     });
 
     async function processImage(item) {
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const dataUrl = canvas.toDataURL(mimeType, quality);
                 resolve({
-                    name: `iloveimg-clone-${item.name.split('.')[0]}.${extension}`,
+                    name: `pixelcraft-${item.name.split('.')[0]}.${extension}`,
                     dataUrl: dataUrl
                 });
             };
