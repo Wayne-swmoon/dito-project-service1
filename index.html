@@ -1,22 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tetris</title>
+    <title>iLoveIMG 클론 - 모든 이미지 편집 도구</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div id="game-container">
-        <h1>Tetris</h1>
-        <canvas id="tetris" width="200" height="400"></canvas>
-        <div id="info">
-            <h2>Score: <span id="score">0</span></h2>
-            <h2>Next:</h2>
-            <canvas id="next" width="80" height="80"></canvas>
-            <button id="start">Start Game</button>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <div class="logo" id="home-btn">
+                <i class="fas fa-image"></i> <span>iLoveIMG <small>Clone</small></span>
+            </div>
+            <ul class="nav-links">
+                <li>모든 이미지 도구 <i class="fas fa-chevron-down"></i></li>
+                <li>이미지 압축</li>
+                <li>이미지 크기 조절</li>
+                <li>이미지 자르기</li>
+                <li>JPG로 변환</li>
+            </ul>
+            <div class="auth-btns">
+                <button class="btn-login">로그인</button>
+                <button class="btn-signup">가입하기</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Dashboard (Grid of Tools) -->
+        <section id="dashboard" class="dashboard">
+            <div class="hero">
+                <h1>이미지를 편집할 수 있는 모든 도구</h1>
+                <p>몇 번의 클릭만으로 이미지 파일의 압축, 크기 조절, 자르기, 변환 등을 한 번에 처리하세요.</p>
+            </div>
+            
+            <div class="tool-grid">
+                <div class="tool-card" data-tool="compress">
+                    <div class="tool-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+                    <h3>이미지 압축</h3>
+                    <p>최고의 품질을 유지하면서 JPG, PNG, SVG 또는 GIF의 파일 크기를 줄이세요.</p>
+                </div>
+                <div class="tool-card" data-tool="resize">
+                    <div class="tool-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                    <h3>이미지 크기 조절</h3>
+                    <p>픽셀 단위로 정의하거나 백분율을 지정하여 JPG, PNG, SVG 또는 GIF 크기를 조절하세요.</p>
+                </div>
+                <div class="tool-card" data-tool="crop">
+                    <div class="tool-icon"><i class="fas fa-crop-alt"></i></div>
+                    <h3>이미지 자르기</h3>
+                    <p>사각형을 드래그하여 JPG, PNG 또는 GIF를 간편하게 자르세요.</p>
+                </div>
+                <div class="tool-card" data-tool="convert-to-jpg">
+                    <div class="tool-icon"><i class="fas fa-file-export"></i></div>
+                    <h3>JPG로 변환</h3>
+                    <p>PNG, GIF, TIF, PSD, SVG, WEBP, HEIC 또는 RAW 이미지를 JPG로 변환하세요.</p>
+                </div>
+                <div class="tool-card" data-tool="convert-from-jpg">
+                    <div class="tool-icon"><i class="fas fa-file-import"></i></div>
+                    <h3>JPG에서 변환</h3>
+                    <p>JPG 이미지를 PNG 또는 GIF로 변환하세요.</p>
+                </div>
+                <div class="tool-card" data-tool="rotate">
+                    <div class="tool-icon"><i class="fas fa-redo"></i></div>
+                    <h3>이미지 회전</h3>
+                    <p>여러 개의 JPG, PNG 또는 GIF 이미지를 한 번에 회전시키세요.</p>
+                </div>
+                <div class="tool-card" data-tool="watermark">
+                    <div class="tool-icon"><i class="fas fa-stamp"></i></div>
+                    <h3>워터마크 이미지</h3>
+                    <p>이미지에 이미지 또는 텍스트 스탬프를 몇 초 만에 삽입하세요.</p>
+                </div>
+                <div class="tool-card" data-tool="meme">
+                    <div class="tool-icon"><i class="fas fa-grin-squint"></i></div>
+                    <h3>밈 만들기</h3>
+                    <p>나만의 밈을 온라인으로 만드세요. 템플릿을 선택하거나 이미지를 업로드하세요.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool Workspace (Hidden by default) -->
+        <section id="workspace" class="workspace hidden">
+            <div class="workspace-header">
+                <h1 id="tool-title">이미지 압축</h1>
+                <p id="tool-desc">이미지 품질을 최대한 유지하면서 파일 용량을 줄입니다.</p>
+            </div>
+
+            <div id="drop-zone" class="drop-zone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h2>여러 이미지 선택</h2>
+                <p>또는 이미지를 여기로 드래그하세요.</p>
+                <input type="file" id="file-input" multiple accept="image/*" hidden>
+            </div>
+
+            <div id="preview-area" class="preview-area hidden">
+                <div class="preview-container" id="preview-container"></div>
+                <div class="action-panel">
+                    <div id="tool-settings" class="tool-settings">
+                        <!-- Specific tool settings will be injected here -->
+                    </div>
+                    <button id="process-btn" class="btn-primary">이미지 처리하기 <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div id="result-area" class="result-area hidden">
+                <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                <h2>이미지가 성공적으로 처리되었습니다!</h2>
+                <div id="download-links"></div>
+                <button id="reset-btn" class="btn-secondary">다른 이미지 처리하기</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 iLoveIMG Clone Project - 모든 권리 보유.</p>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
