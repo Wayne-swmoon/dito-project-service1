@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const dataUrl = canvas.toDataURL(mimeType, quality);
                 resolve({
-                    name: `pixelcraft-${item.name.split('.')[0]}.${extension}`,
+                    name: `imgcraft-${item.name.split('.')[0]}.${extension}`,
                     dataUrl: dataUrl
                 });
             };
