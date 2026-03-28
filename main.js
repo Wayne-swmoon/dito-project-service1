@@ -135,6 +135,17 @@ function playerDrop() {
     dropCounter = 0;
 }
 
+function playerHardDrop() {
+    while (!collide(board, player)) {
+        player.pos.y++;
+    }
+    player.pos.y--;
+    merge(board, player);
+    clearLines();
+    playerReset();
+    dropCounter = 0;
+}
+
 function playerMove(dir) {
     player.pos.x += dir;
     if (collide(board, player)) {
@@ -245,6 +256,8 @@ document.addEventListener('keydown', event => {
         playerMove(1);
     } else if (event.key === 'ArrowDown') {
         playerDrop();
+    } else if (event.key === ' ') {
+        playerHardDrop();
     } else if (event.key === 'q' || event.key === 'w' || event.key === 'ArrowUp') {
         playerRotate(event.key === 'w' || event.key === 'ArrowUp' ? 1 : -1);
     }
