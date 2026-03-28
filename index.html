@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo" id="home-btn">
-                <div class="logo-icon">
-                    <i class="fas fa-wand-magic-sparkles"></i>
-                </div>
-                <span>Pixel<b>Craft</b></span>
+                <i class="fas fa-magic logo-icon"></i>
+                <span>PixelCraft</span>
             </div>
             <ul class="nav-links">
-                <li>모든 이미지 도구</li>
-                <li>기업용</li>
-                <li>요금제</li>
+                <li>스토어</li>
+                <li>Mac</li>
+                <li>iPad</li>
+                <li>iPhone</li>
+                <li>지원</li>
             </ul>
             <div class="auth-btns">
                 <button class="btn-login">로그인</button>
@@ -35,50 +35,34 @@
         <!-- Dashboard (Grid of Tools) -->
         <section id="dashboard" class="dashboard">
             <div class="hero">
-                <h1>이미지에 숨을 불어넣는 가장 쉬운 방법</h1>
-                <p>몇 번의 클릭만으로 이미지 파일의 압축, 크기 조절, 자르기, 변환 등을 전문적인 품질로 처리하세요.</p>
+                <h1>이미지에 숨을 불어넣다.</h1>
+                <p>몇 번의 클릭만으로 완성되는 프로의 결과물.</p>
             </div>
             
             <div class="tool-grid">
                 <div class="tool-card" data-tool="compress">
-                    <div class="tool-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+                    <div class="tool-icon"><i class="fas fa-compress-alt"></i></div>
                     <h3>이미지 압축</h3>
-                    <p>최고의 품질을 유지하면서 이미지 파일 크기를 획기적으로 줄이세요.</p>
+                    <p>품질은 그대로, 용량은 가볍게.</p>
+                    <a href="#" class="learn-more">더 알아보기 <i class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="tool-card" data-tool="resize">
-                    <div class="tool-icon"><i class="fas fa-expand-arrows-alt"></i></div>
-                    <h3>이미지 크기 조절</h3>
-                    <p>픽셀 또는 비율을 지정하여 정밀하게 이미지 크기를 조절하세요.</p>
+                    <div class="tool-icon"><i class="fas fa-expand"></i></div>
+                    <h3>크기 조절</h3>
+                    <p>픽셀 단위로 완성하는 정교함.</p>
+                    <a href="#" class="learn-more">더 알아보기 <i class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="tool-card" data-tool="crop">
-                    <div class="tool-icon"><i class="fas fa-crop-alt"></i></div>
+                    <div class="tool-icon"><i class="fas fa-crop"></i></div>
                     <h3>이미지 자르기</h3>
-                    <p>자유롭게 영역을 드래그하여 필요한 부분만 완벽하게 추출하세요.</p>
+                    <p>당신이 원하는 완벽한 프레임.</p>
+                    <a href="#" class="learn-more">더 알아보기 <i class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="tool-card" data-tool="convert-to-jpg">
-                    <div class="tool-icon"><i class="fas fa-file-export"></i></div>
-                    <h3>JPG로 변환</h3>
-                    <p>다양한 포맷의 이미지를 가장 널리 쓰이는 JPG로 즉시 변환하세요.</p>
-                </div>
-                <div class="tool-card" data-tool="convert-from-jpg">
-                    <div class="tool-icon"><i class="fas fa-file-import"></i></div>
-                    <h3>JPG에서 변환</h3>
-                    <p>JPG 파일을 투명도가 있는 PNG나 애니메이션 GIF로 변환하세요.</p>
-                </div>
-                <div class="tool-card" data-tool="rotate">
-                    <div class="tool-icon"><i class="fas fa-redo"></i></div>
-                    <h3>이미지 회전</h3>
-                    <p>여러 장의 이미지를 원하는 각도로 한 번에 회전시키세요.</p>
-                </div>
-                <div class="tool-card" data-tool="watermark">
-                    <div class="tool-icon"><i class="fas fa-stamp"></i></div>
-                    <h3>워터마크 추가</h3>
-                    <p>나만의 고유한 텍스트나 이미지를 삽입하여 저작권을 보호하세요.</p>
-                </div>
-                <div class="tool-card" data-tool="meme">
-                    <div class="tool-icon"><i class="fas fa-grin-squint"></i></div>
-                    <h3>밈 제작기</h3>
-                    <p>트렌디한 템플릿으로 누구나 쉽게 나만의 밈을 만들 수 있습니다.</p>
+                    <div class="tool-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3>JPG 변환</h3>
+                    <p>어떤 포맷이든 자유롭게.</p>
+                    <a href="#" class="learn-more">더 알아보기 <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </section>
@@ -91,9 +75,9 @@
             </div>
 
             <div id="drop-zone" class="drop-zone">
-                <i class="fas fa-cloud-arrow-up"></i>
+                <i class="fas fa-plus-circle"></i>
                 <h2>파일 선택하기</h2>
-                <p>또는 이미지를 여기로 드래그하세요.</p>
+                <p>또는 여기로 파일을 드래그하세요.</p>
                 <input type="file" id="file-input" multiple accept="image/*" hidden>
             </div>
 
@@ -102,21 +86,24 @@
                 <div class="action-panel">
                     <div id="tool-settings" class="tool-settings">
                     </div>
-                    <button id="process-btn" class="btn-primary">작업 시작하기 <i class="fas fa-bolt"></i></button>
+                    <button id="process-btn" class="btn-primary">작업 시작하기</button>
                 </div>
             </div>
 
             <div id="result-area" class="result-area hidden">
-                <div class="success-icon"><i class="fas fa-check-double"></i></div>
-                <h2>작업이 완료되었습니다!</h2>
+                <div class="success-icon"><i class="far fa-check-circle"></i></div>
+                <h2>작업이 완료되었습니다.</h2>
                 <div id="download-links"></div>
-                <button id="reset-btn" class="btn-secondary">새로운 작업 시작</button>
+                <button id="reset-btn" class="btn-secondary">처음으로 돌아가기</button>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 <b>PixelCraft</b>. Crafted with <i class="fas fa-heart" style="color: #ec4899;"></i> for creators.</p>
+        <div class="footer-content">
+            <p>다양한 쇼핑 방법: Apple Store를 방문하거나, 리셀러를 찾아보거나, 080-330-8877번으로 전화하세요.</p>
+            <p>&copy; 2026 PixelCraft Inc. 모든 권리 보유.</p>
+        </div>
     </footer>
 
     <script src="main.js"></script>
