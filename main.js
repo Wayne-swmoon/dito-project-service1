@@ -250,6 +250,10 @@ function update(time = 0) {
 document.addEventListener('keydown', event => {
     if (!animationFrameId) return;
 
+    if (['ArrowLeft', 'ArrowRight', 'ArrowDown', ' ', 'ArrowUp', 'q', 'w'].includes(event.key)) {
+        event.preventDefault();
+    }
+
     if (event.key === 'ArrowLeft') {
         playerMove(-1);
     } else if (event.key === 'ArrowRight') {
@@ -264,6 +268,7 @@ document.addEventListener('keydown', event => {
 });
 
 startButton.addEventListener('click', () => {
+    startButton.blur();
     if (!animationFrameId) {
         board.forEach(row => row.fill(0));
         score = 0;
