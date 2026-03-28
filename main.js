@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'convert-to-jpg': { title: 'JPG 변환', desc: '다양한 이미지 형식을 JPG로 변환합니다.' }
     };
 
+    const navLinks = document.querySelectorAll('.nav-links li');
+
     // Navigation
     homeBtn.addEventListener('click', showDashboard);
     resetBtn.addEventListener('click', () => {
@@ -48,6 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', () => {
             const tool = card.getAttribute('data-tool');
             showTool(tool);
+        });
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const tool = link.getAttribute('data-nav');
+            if (tool) showTool(tool);
         });
     });
 

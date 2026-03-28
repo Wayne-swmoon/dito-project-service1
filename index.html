@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMGCraft - 전문가를 위한 이미지 편집 도구</title>
+    <title>IMGCraft - 보안이 강화된 전문가용 이미지 편집 도구</title>
+    <meta name="description" content="서버 업로드 없이 브라우저에서 즉시 처리되는 보안 중심 이미지 압축, 크기 조절 및 변환 도구입니다.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -18,15 +19,13 @@
                 <span>IMGCraft</span>
             </div>
             <ul class="nav-links">
-                <li>스토어</li>
-                <li>Mac</li>
-                <li>iPad</li>
-                <li>iPhone</li>
-                <li>지원</li>
+                <li data-nav="compress">이미지 압축</li>
+                <li data-nav="resize">크기 조절</li>
+                <li data-nav="crop">이미지 자르기</li>
+                <li data-nav="convert-to-jpg">JPG 변환</li>
             </ul>
             <div class="auth-btns">
-                <button class="btn-login">로그인</button>
-                <button class="btn-signup">시작하기</button>
+                <button class="btn-signup">애드센스 통과용 시작</button>
             </div>
         </nav>
     </header>
@@ -35,35 +34,60 @@
         <!-- Dashboard (Grid of Tools) -->
         <section id="dashboard" class="dashboard">
             <div class="hero">
-                <h1>이미지에 숨을 불어넣다.</h1>
-                <p>몇 번의 클릭만으로 완성되는 프로의 결과물.</p>
+                <h1>이미지 편집, 이제 보안까지 완벽하게.</h1>
+                <p>IMGCraft는 귀하의 소중한 데이터를 서버로 전송하지 않습니다.<br>모든 작업은 귀하의 브라우저 내에서 안전하고 빠르게 처리됩니다.</p>
             </div>
+
+            <!-- Value Proposition Section (Crucial for AdSense) -->
+            <section class="value-prop">
+                <div class="prop-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>개인정보 보호 우선</h3>
+                    <p>업로드된 이미지는 서버에 저장되지 않으며, 오직 귀하의 장치에서만 처리됩니다. 보안이 중요한 기업 및 개인에게 최적화되어 있습니다.</p>
+                </div>
+                <div class="prop-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>즉각적인 처리 속도</h3>
+                    <p>대기 시간 없이 즉시 결과물을 확인하세요. 브라우저 기반 기술로 전 세계 어디서든 가장 빠른 편집 경험을 제공합니다.</p>
+                </div>
+                <div class="prop-item">
+                    <i class="fas fa-gem"></i>
+                    <h3>무료 고품질 엔진</h3>
+                    <p>복잡한 설치 없이 전문가 수준의 최적화 알고리즘을 경험하세요. 웹 표준에 맞춘 최적의 품질을 보장합니다.</p>
+                </div>
+            </section>
             
             <div class="tool-grid">
                 <div class="tool-card" data-tool="compress">
                     <div class="tool-icon"><i class="fas fa-compress-alt"></i></div>
                     <h3>이미지 압축</h3>
-                    <p>품질은 그대로, 용량은 가볍게.</p>
-                    <a href="#" class="learn-more">더 알아보기 <i class="fas fa-chevron-right"></i></a>
+                    <p>화질 저하 없이 웹 사이트 로딩 속도를 개선하세요. SEO와 로딩 속도 최적화의 필수 도구입니다.</p>
+                    <span class="learn-more">압축 시작하기 <i class="fas fa-chevron-right"></i></span>
                 </div>
                 <div class="tool-card" data-tool="resize">
                     <div class="tool-icon"><i class="fas fa-expand"></i></div>
                     <h3>크기 조절</h3>
-                    <p>픽셀 단위로 완성하는 정교함.</p>
-                    <a href="#" class="learn-more">더 알아보기 <i class="fas fa-chevron-right"></i></a>
+                    <p>소셜 미디어, 블로그, 웹 사이트 규격에 딱 맞는 사이즈로 변경하세요. 정확한 픽셀 보정이 가능합니다.</p>
+                    <span class="learn-more">조절 시작하기 <i class="fas fa-chevron-right"></i></span>
                 </div>
                 <div class="tool-card" data-tool="crop">
                     <div class="tool-icon"><i class="fas fa-crop"></i></div>
                     <h3>이미지 자르기</h3>
-                    <p>당신이 원하는 완벽한 프레임.</p>
-                    <a href="#" class="learn-more">더 알아보기 <i class="fas fa-chevron-right"></i></a>
+                    <p>중요한 피사체에 집중하세요. 직관적인 인터페이스로 원하는 구도를 완벽하게 잡아낼 수 있습니다.</p>
+                    <span class="learn-more">자르기 시작하기 <i class="fas fa-chevron-right"></i></span>
                 </div>
                 <div class="tool-card" data-tool="convert-to-jpg">
                     <div class="tool-icon"><i class="fas fa-sync-alt"></i></div>
                     <h3>JPG 변환</h3>
-                    <p>어떤 포맷이든 자유롭게.</p>
-                    <a href="#" class="learn-more">더 알아보기 <i class="fas fa-chevron-right"></i></a>
+                    <p>HEIC, WebP, PNG 등 호환되지 않는 포맷을 범용적인 JPG로 즉시 변환하여 활용성을 높이세요.</p>
+                    <span class="learn-more">변환 시작하기 <i class="fas fa-chevron-right"></i></span>
                 </div>
+            </div>
+
+            <!-- Ad Placement Placeholder -->
+            <div class="ad-placeholder">
+                <p>ADVERTISEMENT</p>
+                <span>이 영역에 구글 애드센스 광고가 게재됩니다.</span>
             </div>
         </section>
 
@@ -77,7 +101,7 @@
             <div id="drop-zone" class="drop-zone">
                 <i class="fas fa-plus-circle"></i>
                 <h2>파일 선택하기</h2>
-                <p>또는 여기로 파일을 드래그하세요.</p>
+                <p>또는 여기로 파일을 드래그하세요. 모든 작업은 로컬에서 안전하게 처리됩니다.</p>
                 <input type="file" id="file-input" multiple accept="image/*" hidden>
             </div>
 
@@ -85,20 +109,19 @@
                 <div class="preview-container" id="preview-container"></div>
                 <div class="action-panel">
                     <div id="tool-settings" class="tool-settings">
-                        <!-- 설정은 main.js에서 동적으로 주입되지만, 구조적 이해를 위해 주석 유지 -->
                     </div>
                     <div id="compression-options" class="compression-options hidden">
                         <div class="option-card active" data-level="high">
                             <h4>최고의 압축</h4>
-                            <p>화질은 다소 낮아지지만 파일 크기를 최소화합니다.</p>
+                            <p>용량 감소 극대화</p>
                         </div>
                         <div class="option-card" data-level="recommended">
                             <h4>권장 압축</h4>
-                            <p>최상의 품질과 파일 크기 사이의 완벽한 균형.</p>
+                            <p>품질과 용량의 조화</p>
                         </div>
                         <div class="option-card" data-level="low">
                             <h4>낮은 압축</h4>
-                            <p>화질 저하를 최소화하면서 용량만 살짝 줄입니다.</p>
+                            <p>최상의 품질 유지</p>
                         </div>
                     </div>
                     <button id="process-btn" class="btn-primary">작업 시작하기</button>
@@ -117,24 +140,26 @@
                         <i class="fas fa-arrow-right"></i>
                     </div>
                     <div class="stat-item">
-                        <span class="label">압축 용량</span>
+                        <span class="label">최적화 용량</span>
                         <span class="value accent" id="compressed-size">0 KB</span>
                     </div>
                     <div class="stat-item highlight">
-                        <span class="label">절감률</span>
+                        <span class="label">감소율</span>
                         <span class="value" id="reduction-rate">0%</span>
                     </div>
                 </div>
                 <div id="download-links" class="download-grid"></div>
-                <button id="reset-btn" class="btn-secondary">처음으로 돌아가기</button>
+                <button id="reset-btn" class="btn-secondary">다른 이미지 작업하기</button>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>다양한 쇼핑 방법: Apple Store를 방문하거나, 리셀러를 찾아보거나, 080-330-8877번으로 전화하세요.</p>
-            <p>&copy; 2026 IMGCraft Inc. 모든 권리 보유.</p>
+            <div class="footer-links">
+                <span>개인정보처리방침</span> | <span>이용약관</span> | <span>문의하기</span> | <span>도움말</span>
+            </div>
+            <p>&copy; 2026 IMGCraft Inc. Made with <i class="fas fa-heart"></i> for Data Privacy. 모든 작업은 서버 업로드 없이 귀하의 브라우저에서 처리됩니다.</p>
         </div>
     </footer>
 
