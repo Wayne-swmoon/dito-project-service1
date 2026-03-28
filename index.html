@@ -85,6 +85,21 @@
                 <div class="preview-container" id="preview-container"></div>
                 <div class="action-panel">
                     <div id="tool-settings" class="tool-settings">
+                        <!-- 설정은 main.js에서 동적으로 주입되지만, 구조적 이해를 위해 주석 유지 -->
+                    </div>
+                    <div id="compression-options" class="compression-options hidden">
+                        <div class="option-card active" data-level="high">
+                            <h4>최고의 압축</h4>
+                            <p>화질은 다소 낮아지지만 파일 크기를 최소화합니다.</p>
+                        </div>
+                        <div class="option-card" data-level="recommended">
+                            <h4>권장 압축</h4>
+                            <p>최상의 품질과 파일 크기 사이의 완벽한 균형.</p>
+                        </div>
+                        <div class="option-card" data-level="low">
+                            <h4>낮은 압축</h4>
+                            <p>화질 저하를 최소화하면서 용량만 살짝 줄입니다.</p>
+                        </div>
                     </div>
                     <button id="process-btn" class="btn-primary">작업 시작하기</button>
                 </div>
@@ -92,8 +107,25 @@
 
             <div id="result-area" class="result-area hidden">
                 <div class="success-icon"><i class="far fa-check-circle"></i></div>
-                <h2>작업이 완료되었습니다.</h2>
-                <div id="download-links"></div>
+                <h2 id="result-message">작업이 완료되었습니다.</h2>
+                <div class="stats-dashboard" id="stats-dashboard">
+                    <div class="stat-item">
+                        <span class="label">원본 용량</span>
+                        <span class="value" id="original-size">0 KB</span>
+                    </div>
+                    <div class="stat-item separator">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">압축 용량</span>
+                        <span class="value accent" id="compressed-size">0 KB</span>
+                    </div>
+                    <div class="stat-item highlight">
+                        <span class="label">절감률</span>
+                        <span class="value" id="reduction-rate">0%</span>
+                    </div>
+                </div>
+                <div id="download-links" class="download-grid"></div>
                 <button id="reset-btn" class="btn-secondary">처음으로 돌아가기</button>
             </div>
         </section>
